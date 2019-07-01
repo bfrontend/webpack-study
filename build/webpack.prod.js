@@ -49,9 +49,9 @@ const prodConfig = {
             'process.env.NODE_ENV': JSON.stringify('production'),
         }),
         new webpack.HashedModuleIdsPlugin(),  //根据模块的相对路径生成一个四位数的hash
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'runtime'
-        })
+//         new webpack.optimize.CommonsChunkPlugin({
+//             name: 'runtime'
+//         })
     ],
     optimization: {
         splitChunks: {
