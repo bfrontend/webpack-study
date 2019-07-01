@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'dva';
-import {Form, Icon, Input, Button} from 'antd';
+import {Form, Icon, Input, Button, Layout} from 'antd';
 import './index.less';
 @connect(state => ({login: state.login}))
 @Form.create()
@@ -23,7 +23,7 @@ class Login extends Component {
 	render() {
 		const {getFieldDecorator} = this.props.form;
 		return (
-			<div className="login">
+			<Layout className="login">
 				<Form onSubmit={this.handleSubmit} className="login-form">
 					<Form.Item>
 						{getFieldDecorator('username', {
@@ -52,7 +52,7 @@ class Login extends Component {
 						Log in
 					</Button>
 				</Form>
-			</div>
+			</Layout>
 		);
 	}
 }
