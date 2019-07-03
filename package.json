@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "sideEffects": [
-    "*.css"
+    "*.css",
+    "*.less"
   ],
   "scripts": {
     "start": "node ./build/dev-server.js",

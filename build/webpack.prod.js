@@ -29,9 +29,6 @@ const prodConfig = {
             use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
         }]
     },
-    optimization: {
-        minimizer: [new OptimizeCSSAssetsPlugin({})]
-    },
     plugins: [
         new MiniCssExtractPlugin({
             filename: '[name].css',
@@ -49,11 +46,9 @@ const prodConfig = {
             'process.env.NODE_ENV': JSON.stringify('production'),
         }),
         new webpack.HashedModuleIdsPlugin(),  //根据模块的相对路径生成一个四位数的hash
-//         new webpack.optimize.CommonsChunkPlugin({
-//             name: 'runtime'
-//         })
     ],
     optimization: {
+        minimizer: [new OptimizeCSSAssetsPlugin({})],
         splitChunks: {
             chunks: "all",    // 只对异步引入代码起作用，设置all时并同时配置vendors才对两者起作用
             minSize: 30000,   // 引入的库大于30kb时才会做代码分割
