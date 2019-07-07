@@ -3,6 +3,7 @@ import {connect} from 'dva';
 import {Layout, Menu, Icon} from 'antd';
 import './index.less';
 
+import GgEditor from '@/components/GgEditor'
 
 const {Header, Content, Footer, Sider} = Layout;
 @connect(state => ({home: state.home}))
@@ -43,9 +44,11 @@ class Home extends Component {
 				<Layout>
 					<Header style={{background: '#fff', padding: 0}} />
 					<Content style={{margin: '24px 16px 0'}}>
-						<div style={{padding: 24, background: '#fff', minHeight: 360}}>content</div>
+						<div style={{background: '#fff', minHeight: 360, height: '100%' }}>
+							<GgEditor />
+						</div>
 					</Content>
-					<Footer style={{textAlign: 'center'}}>Ant Design ©2018 Created by Ant UED</Footer>
+					<Footer style={{textAlign: 'center'}}>webxmsj ©2018 Created by webxmsj</Footer>
 				</Layout>
 			</Layout>
 		);
