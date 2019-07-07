@@ -26,7 +26,7 @@ class Login extends Component {
 			<Layout className="login">
 				<Form onSubmit={this.handleSubmit} className="login-form">
 					<Form.Item>
-						{getFieldDecorator('username', {
+						{getFieldDecorator('userName', {
 							rules: [{required: true, message: 'Please input your username!'}]
 						})(
 							<Input

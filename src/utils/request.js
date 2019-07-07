@@ -2,12 +2,12 @@
 * @Author: webxmsj
 * @Date:   2019-07-03 22:06:08
 * @Last Modified by:   webxmsj
-* @Last Modified time: 2019-07-03 22:15:37
+* @Last Modified time: 2019-07-07 16:31:56
 */
 import axios from 'axios'
-
+const BASEURL = process.env.MOCK ? '/' : 'https://api.bfrontend.com'
 const Instance = axios.create({
-  baseURL: 'https://api.bfrontend.com',
+  baseURL: BASEURL,
   timeout: 5000
 })
 const requestInterceptor = config => config;

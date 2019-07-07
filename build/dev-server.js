@@ -5,6 +5,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require("webpack-hot-middleware");
 const ConnectHistoryApiFallback = require('connect-history-api-fallback');
 const config = require('./webpack.dev.js');
+const apiMocker = require('mocker-api')
 
 const complier = webpack(config);   // 编译器，编译器执行一次就会重新打包一下代码
 const app = express();  // 生成一个实例
@@ -19,6 +20,9 @@ let hotMiddleware = webpackHotMiddleware(complier, {
     log: false,
     heartbeat: 2000
 })
+if (process.env.MOCK) {
+  apiMocker(app, path.resolve(__dirname, '../', 'mock/index.js'))
+}
 app.use(ConnectHistoryApiFallback());
 app.use(devMiddleware)
 
