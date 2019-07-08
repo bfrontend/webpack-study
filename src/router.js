@@ -12,7 +12,7 @@ import Setting from '@/views/setting'
 import Nodes from '@/views/nodes'
 import Article from '@/views/article'
 import Tag from '@/views/tags'
-import Category from '@/views/Category'
+import Category from '@/views/category'
 import DefaultLayout from '@/layouts/SidebarLayout'
 import './index.less';
 
