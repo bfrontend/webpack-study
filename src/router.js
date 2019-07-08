@@ -20,7 +20,7 @@ const {ConnectedRouter} = routerRedux;
 
 const routes = [{
   path: '/',
-  component: Home,
+  component: Login,
   exact: true
 }, {
   path: '/login',
