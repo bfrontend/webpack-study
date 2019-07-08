@@ -14,6 +14,7 @@ import Article from '@/views/article'
 import Tag from '@/views/tags'
 import Category from '@/views/category'
 import DefaultLayout from '@/layouts/SidebarLayout'
+import FullScreenLayout from '@/layouts/FullScreenLayout'
 import './index.less';
 
 const {ConnectedRouter} = routerRedux;
@@ -21,10 +22,12 @@ const {ConnectedRouter} = routerRedux;
 const routes = [{
   path: '/',
   component: Login,
+  layout: FullScreenLayout,
   exact: true
 }, {
   path: '/login',
-  component: Login
+  component: Login,
+  layout: FullScreenLayout
 }, {
   path: '/nodes',
   component: Nodes

@@ -14,7 +14,7 @@ export default {
             type: 'updateUserInfo',
             payload: data
           });
-          yield put(routerRedux.push(`home`))
+          yield put(routerRedux.push(`welcome`))
         } else {
           console.log(data)
         }
