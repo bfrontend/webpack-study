@@ -22,8 +22,6 @@ const data = {
   }],
 };
 
-console.log(data)
-
 class GgEditor extends Component {
   constructor(props) {
     super(props);
