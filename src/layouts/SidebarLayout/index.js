@@ -2,12 +2,13 @@
 * @Author: webxmsj
 * @Date:   2019-07-08 21:18:09
 * @Last Modified by:   webxmsj
-* @Last Modified time: 2019-07-08 22:28:01
+* @Last Modified time: 2019-07-08 23:07:49
 */
 import React, {Component} from 'react';
 import {Layout, Menu, Icon, Avatar, Switch} from 'antd';
 import RouterView from '@/components/RouterView'
 import { Link } from 'dva/router'
+import './index.less';
 const { SubMenu } = Menu
 const {Header, Content, Footer, Sider} = Layout;
 
