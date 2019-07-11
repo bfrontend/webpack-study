@@ -2,7 +2,7 @@
 * @Author: webxmsj
 * @Date:   2019-07-11 08:26:53
 * @Last Modified by:   webxmsj
-* @Last Modified time: 2019-07-11 09:31:42
+* @Last Modified time: 2019-07-11 09:40:30
 */
 import {routerRedux} from 'dva/router';
 const defaultModel = {
@@ -31,10 +31,10 @@ const defaultModel = {
   },
   effects: {
     * loginFail({payload},{call, put}) {
-      yield put(routerRedux.push(`login`))
+      yield put(routerRedux.push('/login'))
     },
     * loginSuccess({payload},{call, put}) {
-      yield put(routerRedux.push(`welcome`))
+      yield put(routerRedux.push('/welcome'))
     }
   },
   reducers: {}
