@@ -2,22 +2,19 @@
 * @Author: webxmsj
 * @Date:   2019-07-08 21:18:09
 * @Last Modified by:   webxmsj
-* @Last Modified time: 2019-07-08 23:07:49
+* @Last Modified time: 2019-07-11 09:31:30
 */
 import React, {Component} from 'react';
-import {Layout, Menu, Icon, Avatar, Switch} from 'antd';
+import {connect} from 'dva';
+import {Layout, Menu, Icon, Avatar, Switch, Button} from 'antd';
 import RouterView from '@/components/RouterView'
-import { Link } from 'dva/router'
+import {Link} from 'dva/router'
 import './index.less';
-const { SubMenu } = Menu
+const {SubMenu} = Menu
 const {Header, Content, Footer, Sider} = Layout;
 
-
+@connect(state => ({login: state.login}))
 class SidebarLayout extends Component {
-  constructor(props) {
-    super(props)
-    console.log(props)
-  }
   state = {
     theme: 'dark'
   }
@@ -28,6 +25,13 @@ class SidebarLayout extends Component {
   }
   selectMenu = ({keyPath}) => {
     this.props.history.push(keyPath[0])
+  }
+  logout = () => {
+    const {dispatch} = this.props;
+    const res = dispatch({
+      type: 'login/logOut'
+    })
+    console.log(this.props)
   }
   render() {
     const children = this.props.RouteMeta.component;
@@ -86,7 +90,9 @@ class SidebarLayout extends Component {
           />
         </Sider>
         <Layout>
-          <Header style={{background: '#fff', padding: 0}} />
+          <Header style={{background: '#fff', padding: 0}}>
+            <Button onClick={this.logout}>退出</Button>
+          </Header>
           <Content style={{margin: '24px 16px 0'}}>
             <RouterView match={this.props.match} component={children}></RouterView>
           </Content>

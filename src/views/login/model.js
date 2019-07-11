@@ -14,10 +14,14 @@ export default {
             type: 'updateUserInfo',
             payload: data
           });
+          localStorage.setItem('token', data.token)
           yield put(routerRedux.push(`welcome`))
-        } else {
-          console.log(data)
         }
+        return data;
+      },
+      * logOut({payload}, {call, put}) {
+        localStorage.removeItem('token')
+        yield put(routerRedux.push(`login`))
       }
     },
     reducers: {

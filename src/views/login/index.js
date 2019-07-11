@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'dva';
-import {Form, Icon, Input, Button, Layout} from 'antd';
+import {Form, Icon, Input, Button, Layout, Avatar, message} from 'antd';
 import './index.less';
 @connect(state => ({login: state.login}))
 @Form.create()
@@ -13,9 +13,13 @@ class Login extends Component {
 		const {dispatch} = this.props;
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-				dispatch({
+				const res = dispatch({
 					type: 'login/goHome',
 					payload: values
+				}).then(result => {
+					if (!result.success) {
+						message.error(result.message);
+					}
 				})
 			}
 		});
@@ -49,8 +53,14 @@ class Login extends Component {
 						)}
 					</Form.Item>
 					<Button style={{width: 200}} type="primary" htmlType="submit" className="login-form-button">
-						Log in
+						登录
 					</Button>
+					<div>
+						<p className='infomessage'>其他方式登录</p>
+						<Avatar className='other-item'>Q</Avatar>
+						<Avatar className='other-item'>W</Avatar>
+						<Avatar className='other-item'>脸</Avatar>
+					</div>
 				</Form>
 			</Layout>
 		);

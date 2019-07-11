@@ -2,11 +2,11 @@
 * @Author: webxmsj
 * @Date:   2019-07-06 09:03:00
 * @Last Modified by:   webxmsj
-* @Last Modified time: 2019-07-06 13:42:00
+* @Last Modified time: 2019-07-11 09:30:53
 */
 import React, {Component} from 'react';
-import { withPropsAPI } from "gg-editor";
-import { Button, Upload, Icon } from 'antd';
+import {withPropsAPI} from "gg-editor";
+import {Button, Upload, Icon} from 'antd';
 const ButtonGroup = Button.Group;
 
 import reorganize from '@/utils/mdLoader'
@@ -14,12 +14,12 @@ import reorganize from '@/utils/mdLoader'
 class Save extends Component {
 
   handleSave = () => {
-    const { propsAPI } = this.props
+    const {propsAPI} = this.props
     console.log(propsAPI.save().roots)
   }
 
   handleRefresh = () => {
-    const { propsAPI } = this.props
+    const {propsAPI} = this.props
     // propsAPI.read({
     //   roots: [{
     //     label: 'asdf'
@@ -28,12 +28,12 @@ class Save extends Component {
   }
 
   handleLocation = () => {
-    const { propsAPI } = this.props
+    const {propsAPI} = this.props
     console.log(propsAPI.getSelected())
   }
 
   transformFile = async e => {
-    const { propsAPI } = this.props
+    const {propsAPI} = this.props
     if (e.size > 0 && e.type === 'text/markdown') {
       const text = await e.text()
       const a = reorganize(text)
