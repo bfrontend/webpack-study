@@ -73,7 +73,7 @@
     "babel-plugin-import": "^1.12.0",
     "clean-webpack-plugin": "^3.0.0",
     "connect-history-api-fallback": "^1.6.0",
-    "core-js": "^2.6.9",
+    "core-js": "^3.2.1",
     "css-split-webpack-plugin": "^0.2.6",
     "dva": "^2.4.1",
     "fs": "^0.0.1-security",
